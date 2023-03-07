@@ -301,6 +301,7 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   line-height: 1.1cm;
 }
 
+
 .rouge-italique-gras-geant {
   font-weight: bold;
   font-style: italic;
@@ -312,6 +313,11 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   color: white;
 }
 
+.gras-bleu {
+  color: #0855a0;
+  font-weight: bold;
+}
+
 
 
 .pull-left-25 {
@@ -321,6 +327,16 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 .pull-right-75 {
   float: right;
   width: 75%;
+}
+
+.pull-right-65 {
+  float: right;
+  width: 65%;
+}
+
+.pull-right-30 {
+  float: right;
+  width: 30%;
 }
 
 
