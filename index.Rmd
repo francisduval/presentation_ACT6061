@@ -112,14 +112,24 @@ knitr::include_graphics("images/dl_faces.jpg")
 
 ---
 
-background-image: url("images/deep_learning.png")
-background-position: 10% 83%
-background-size: 50%
-
 # Pourquoi l'apprentissage profond?
 
-.pull-right-30[
-## Machine learning vs Deep learning
+.pull-left[
+```{r echo = F, out.width = "100%", fig.align = "left"}
+knitr::include_graphics("images/deep_learning.png")
+```
+]
+
+.pull-right[
+<br>
+<br>
+<br>
+<br>
+## Machine learning 
+<br>
+## vs
+<br>
+## Deep learning
 ]
 
 ---
