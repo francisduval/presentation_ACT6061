@@ -243,7 +243,6 @@ La fonction de prédiction peut être écrite sous forme matricielle: `\(\wideha
 - En effet, pour seulement 2 inputs, on a déjà 13 paramètres. C'est pour ça que les réseaux de neurones sont capables de résoudre des tâches complexes.
 - La linéarité est brisée par les fonctions d'activation `\(g\)`. Sans celles-ci, la fonction de prédiction serait complètement linéaire.
 
-
 ---
 
 # Entrainer un réseau de neurones
@@ -304,6 +303,40 @@ La fonction de prédiction peut être écrite sous forme matricielle: `\(\wideha
 # Entrainer un réseau de neurones
 
 ## Descente de gradient
+
+.pull-left[
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="images/gradient_descent.gif" alt="Fonction de risque empirique en fonction des paramètres. Note: ici, les paramètres sont dénotés par la lettre grecque theta." width="100%" /&gt;
+&lt;p class="caption"&gt;Fonction de risque empirique en fonction des paramètres. Note: ici, les paramètres sont dénotés par la lettre grecque theta.&lt;/p&gt;
+&lt;/div&gt;
+]
+
+.pull-right[
+**Pseudo-algorithme:**&lt;br&gt;
+1. Initialiser les paramètres `\((w_0, w_1)\)` au hasard
+2. Calculer le gradient de la fonction de risque au point `\((w_0, w_1)\)`
+3. Bouger dans la direction opposée du gradient (le gradient pointe vers le haut de la fonction alors qu'on veut aller vers le bas)
+4. Répéter jusqu'à convergence
+]
+
+---
+
+# Entrainer un réseau de neurones
+
+## Descente de gradient
+
+**Algorithme**
+
+1. Initialiser les paramètres `\(\boldsymbol{w}\)` au hasard `\(\sim\mathcal{N}(0, \sigma^2)\)`
+2. Répéter jusqu'à convergence:
+  - Calculer le gradient `\(\frac{\partial J(\boldsymbol{w})}{\partial \boldsymbol{w}}\)`
+  - Mettre à jour les paramètres: `\(\boldsymbol{w} \leftarrow \boldsymbol{w} - \eta \frac{\partial J(\boldsymbol{w})}{\partial \boldsymbol{w}}\)`
+3. Output: paramètres `\(\boldsymbol{w}\)`
+---
+
+# Entrainer un réseau de neurones
+
+## Minimisation du risque empirique
 
 
 
