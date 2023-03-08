@@ -247,7 +247,7 @@ background-size: 70%
 
 ### Perceptron multicouches (exemple à 1 couche cachée de 3 neurones cachés)
 
-<br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 La fonction de prédiction peut être écrite sous forme matricielle: $\widehat{y} = g\left[\boldsymbol{w}^{(2)}\times g\left(\boldsymbol{w}^{(1)}\boldsymbol{x} + \boldsymbol{b}^{(1)}\right) + \boldsymbol{b}_1^{(2)}\right]$, où « $\times$ » est la multiplication matricielle standard et où:
 
@@ -473,4 +473,4 @@ background-size: 90%
 
 ### Solution proposée
 
-
+Une solution est de donner en entrée à un réseau de neurones les données télématiques sous un format plus brute afin que celui-ci créée lui-même des features pertinentes.
