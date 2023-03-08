@@ -4,7 +4,7 @@
     <title>Tarification avec données télématiques</title>
     <meta charset="utf-8" />
     <meta name="author" content="Francis Duval" />
-    <meta name="date" content="2023-03-07" />
+    <meta name="date" content="2023-03-08" />
     <script src="libs/header-attrs-2.20/header-attrs.js"></script>
     <link rel="stylesheet" href="theme_cara.css" type="text/css" />
   </head>
@@ -227,7 +227,7 @@ background-size: 70%
 
 # Qu'est-ce qu'un réseau de neurones (concrètement)?
 
-## Perceptron multicouches (exemple à 1 couche cachée de 3 neurones cachés)
+### Perceptron multicouches (exemple à 1 couche cachée de 3 neurones cachés)
 
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
 
@@ -248,7 +248,7 @@ La fonction de prédiction peut être écrite sous forme matricielle: `\(\wideha
 
 # Entrainer un réseau de neurones
 
-## Fonction de perte
+### Fonction de perte
 
 - Entrainer le réseau = trouver de « bonnes » valeurs pour les paramètres `\(\boldsymbol{w}\)` et `\(\boldsymbol{b}\)`.
 - Bonnes valeurs de paramètres `\(\longrightarrow\)` valeurs qui donnent des prédictions `\(\widehat{y}\)` « proches » des réponses `\(y\)`.
@@ -266,7 +266,8 @@ La fonction de prédiction peut être écrite sous forme matricielle: `\(\wideha
   \begin{align}
     \ell(y, \widehat{y}) = \left[-\widehat{y} + y\ln(\widehat{y})\right]
   \end{align}
-- Le but est alors de minimiser la fonction de perte moyenne sur l'ensemble d'entrainement. On voudra donc trouver les paramètres qui minimisent `\(\frac{1}{n}\sum_{i=1}^n \ell(y_i, \widehat{y}_i)\)`.
+- Le but est alors de minimiser la fonction de perte moyenne sur l'ensemble d'entrainement, qu'on appelle parfois **risque empirique**. On voudra donc trouver les paramètres qui minimisent `\(\frac{1}{n}\sum_{i=1}^n \ell(y_i, \widehat{y}_i)\)`.
+`$$\DeclareMathOperator*{\argmin}{argmin}$$`
 
 ???
 
@@ -279,9 +280,30 @@ La fonction de prédiction peut être écrite sous forme matricielle: `\(\wideha
 
 # Entrainer un réseau de neurones
 
+## Minimisation du risque empirique
 
+- Le but est donc de trouver les paramètres `\(\boldsymbol{w}^*\)` qui minimisent le risque empirique:
+`\begin{align}
+  \boldsymbol{w}^* &amp;= \argmin_\boldsymbol{w} \frac{1}{n}\sum_{i=1}^n \ell(y, \widehat{y})\\
+  &amp;= \argmin_\boldsymbol{w} \frac{1}{n}\sum_{i=1}^n \ell(y, f(\boldsymbol{x}_i; \boldsymbol{w}))\\
+  &amp;= \argmin_\boldsymbol{w} J(\boldsymbol{w})
+\end{align}`
+
+- Avec les GLMs, on dérivait par rapport aux paramètres et on égalait à zéro pour trouver le minimum.
+- Cette méthode ne fonctionne pas ici, car rien ne garantit que la fonction de risque empirique `\(J\)` est convexe!
+- On utilise plutôt la **descente de gradient** (et ses dérivées).
+
+???
+
+- Le but est de trouver les paramètres `\(\boldsymbol{w}^*\)` qui minimisent le risque empirique `\(J\)`.
+- On ne peut pas simplement calculer la dérivée de la fonction `\(J\)` par rapport aux paramètres `\(\boldsymbol{w}\)` et égaler à zéro pour trouver le minimum comme on faisait avec les GLMs, car la fonction `\(J\)` n'est jamais convexe (sauf peut-être dans quelques cas simples comme le perceptron à 0 couche cachée) et a souvent plusieurs minimums locaux et des points de selle.
+- Pour les réseaux de neurones, on utilise donc habituellement des méthodes basées sur la descente de gradient. 
 
 ---
+
+# Entrainer un réseau de neurones
+
+## Descente de gradient
 
 
 
