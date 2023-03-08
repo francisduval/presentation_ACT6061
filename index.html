@@ -190,8 +190,8 @@ background-size: 25%
   - `\(w_{\texttt{age_ass}}\)` = -0.02,
   - `\(w_{\texttt{age_veh}}\)` = -0.01.
 
-&lt;br&gt;&lt;br&gt;
-**Estimer la probabilité de réclamer pour un assuré de 25 ans avec un véhicule de 5 ans.**
+****
+**Exercice**: Estimer la probabilité de réclamer pour un assuré de 25 ans avec un véhicule de 5 ans.
 
 ???
 
@@ -391,7 +391,7 @@ La fonction de prédiction peut être écrite sous forme matricielle: `\(\wideha
 - Dans cette présentation, nous nous sommes concentrés sur le perceptron multicouches dans le cadre de l'apprentissage supervisé.
 - Cependant, il existe une panoplie d'autres architecture.
 
-&lt;img src="images/neural_nets_types.png" width="97%" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;img src="images/neural_nets_types.png" width="98%" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ---
 
@@ -407,18 +407,50 @@ background-size: 90%
 
 ---
 
+# Application à la tarification avec données télématiques
 
+### Données
 
+| Véhicule | Numéro de trajet | Date-heure de départ | Date-heure d'arrivée | Distance | Vitesse maximale |
+|------|:------:|------:|------:|------:|------:|
+| A | 1 | 2017-05-02 19:04:15 | 2017-05-02 19:24:24 | 25 | 104 |
+| A | 2 | 2017-05-02 21:31:29 | 2017-05-02 21:31:29 | 6.4 | 66 |
+| `\(\vdots\)` | `\(\vdots\)` | `\(\vdots\)` | `\(\vdots\)` | `\(\vdots\)` | `\(\vdots\)` |
+| A | 2320 | 2018-04-30 21:17:22 | 2018-04-30 21:18:44 | 0.2 | 27 |
+| B | 1 | 2017-03-26 11:46:07 | 2017-03-26 11:53:29 | 1.5 | 76 |
+| B | 2 | 2017-03-26 15:18:23 | 2017-03-26 15:51:46 | 35.1 | 119 |
+| `\(\vdots\)` | `\(\vdots\)` | `\(\vdots\)` | `\(\vdots\)` | `\(\vdots\)` | `\(\vdots\)` |
+| B | 1485 | 2018-03-23 20:07:08 | 2018-03-23 20:20:30 | 10.1 | 92 |
+| `\(\vdots\)` | `\(\vdots\)` | `\(\vdots\)` | `\(\vdots\)` | `\(\vdots\)` | `\(\vdots\)` |
 
+---
 
 # Application à la tarification avec données télématiques
 
+### Problème
 
+**Supposons que l'on veule faire de la tarification par véhicule. On pourrait alors créer « à la main » plusieurs variables explicatives, ou features, avec les données télématiques. Par exemple:**
+- Distance moyenne par jour
+- Nombre de trajets moyen par jour
+- Vitesse moyenne médiane 
+- Vitesse maximale médiane
+- Proportion de longs trajets (disons &gt; 100km)
+- Fraction de la conduite:
+  - Le matin
+  - L'après-midi
+  - Le soir
+  - La nuit
+  - À l'heure de pointe
+  - etc.
+- etc.
 
+**Cependant, ces features sont créées de manière arbitraire et ne sont probablement pas optimale pour la tâche de tarification**.
 
+---
 
+# Application à la tarification avec données télématiques
 
-
+### Solution proposée
 
 
     </textarea>
