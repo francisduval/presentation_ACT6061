@@ -297,7 +297,7 @@ $$\DeclareMathOperator*{\argmin}{argmin}$$
 
 # Entrainer un réseau de neurones
 
-## Minimisation du risque empirique
+### Minimisation du risque empirique
 
 - Le but est donc de trouver les paramètres $\boldsymbol{w}^*$ qui minimisent le risque empirique:
 \begin{align}
@@ -320,7 +320,7 @@ $$\DeclareMathOperator*{\argmin}{argmin}$$
 
 # Entrainer un réseau de neurones
 
-## Descente de gradient
+### Descente de gradient
 
 .pull-left[
 ```{r echo = F, out.width = "100%", fig.align = "center", fig.cap = "Fonction de risque empirique en fonction des paramètres. Note: ici, les paramètres sont dénotés par la lettre grecque theta."}
@@ -340,7 +340,7 @@ knitr::include_graphics("images/gradient_descent.gif")
 
 # Entrainer un réseau de neurones
 
-## Descente de gradient
+### Descente de gradient
 
 **Algorithme**
 
@@ -349,14 +349,54 @@ knitr::include_graphics("images/gradient_descent.gif")
   - Calculer le gradient $\frac{\partial J(\boldsymbol{w})}{\partial \boldsymbol{w}}$
   - Mettre à jour les paramètres: $\boldsymbol{w} \leftarrow \boldsymbol{w} - \eta \frac{\partial J(\boldsymbol{w})}{\partial \boldsymbol{w}}$
 3. Output: paramètres $\boldsymbol{w}$
+
 ---
 
 # Entrainer un réseau de neurones
 
-## Minimisation du risque empirique
+### Rétropropagation
 
+- Algorithme de **différentiation automatique** pour calculer le gradient de la fonction de risque empirique.
+- L'algorithme de rétropropagation utilise la **règle de dérivation en chaine** pour calculer le gradient, en allant de la fin du réseau jusqu'au début (d'où le « rétro »).
 
+**Exemple**
 
+- Si vous avez 500 paramètres (ce qui n'est pas énorme pour un réseau de neurones), le gradient sera un vecteur en 500 dimensions.
+- La rétropropagation permet de calculer ce gradient compliqué de manière efficace.
 
+**2 bonnes vidéos sur la rétropropagation:**
 
+- [3Blue1Brown (sans formules)](https://www.youtube.com/watch?v=Ilg3gGewQ5U&t=18s)
+- [3Blue1Brown (avec formules)](https://www.youtube.com/watch?v=tIeHLnjs5U8&t=484s)
 
+---
+
+# Entrainer un réseau de neurones
+
+### Récapitulation
+
+**Pour entrainer un réseau de neurones, on va:**
+
+* .gras-bleu[Initaliser] les paramètres au hasard
+
+- Faire une première « .gras-bleu[passe forward] » pour obtenir le risque empirique initial
+- Appliquer la .gras-bleu[rétropropagation] pour calculer le gradient
+- Effectuer la .gras-bleu[descente de gradient] pour mettre à jour les paramètres
+
+* Faire une deuxième « .gras-bleu[passe forward] » pour obtenir la nouvelle valeur du risque empirique
+* Appliquer la .gras-bleu[rétropropagation] pour calculer le nouveau gradient
+* Effectuer la .gras-bleu[descente de gradient] pour mettre à jour les paramètres
+
+- etc.
+
+---
+
+# Entrainer un réseau de neurones
+
+### Récapitulation
+
+```{r echo = F, out.width = "55%", fig.align = "left"}
+knitr::include_graphics("images/backprop.gif")
+```
+
+---
