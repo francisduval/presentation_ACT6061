@@ -4,7 +4,7 @@
     <title>Tarification avec données télématiques</title>
     <meta charset="utf-8" />
     <meta name="author" content="Francis Duval" />
-    <meta name="date" content="2023-03-08" />
+    <meta name="date" content="2023-03-09" />
     <script src="libs/header-attrs-2.20/header-attrs.js"></script>
     <link rel="stylesheet" href="theme_cara.css" type="text/css" />
   </head>
@@ -429,7 +429,7 @@ background-size: 90%
 
 ### Problème
 
-**Supposons que l'on veule faire de la tarification par véhicule. On pourrait alors créer « à la main » plusieurs variables explicatives, ou features, avec les données télématiques. Par exemple:**
+**Supposons que l'on veuille faire de la tarification par véhicule. On pourrait alors créer « à la main » plusieurs variables explicatives, ou features, avec les données télématiques. Par exemple:**
 - Distance moyenne par jour
 - Nombre de trajets moyen par jour
 - Vitesse moyenne médiane 
@@ -453,6 +453,27 @@ background-size: 90%
 ### Solution proposée
 
 Une solution est de donner en entrée à un réseau de neurones les données télématiques sous un format plus brute afin que celui-ci créée lui-même des features pertinentes.
+
+**Ingénierie des données**
+
+- On se définit les vecteurs suivants:
+
+`\(\boldsymbol{h} = (h_1, h_2, \dots, h_{24})\)`, où `\(h_i\)` est la fraction de la conduite dans la `\(i^\text{e}\)` heure de la journée
+
+`\(\boldsymbol{p} = (p_1, h_2, \dots, p_7)\)`, où `\(p_i\)` est la fraction de la conduite dans la `\(i^\text{e}\)` journée de la semaine
+
+`\(\boldsymbol{vmo} = (vmo_1, vmo_2, \dots, vmo_{14})\)`, où `\(vmo_i\)` est la fraction de trajets dans le `\(i^\text{e}\)` intervalle de vitesse moyenne
+
+`\(\boldsymbol{vma} = (vma_1, vma_2, \dots, vma_{16})\)`, où `\(vma_i\)` est la fraction de trajets dans le `\(i^\text{e}\)` intervalle de vitesse maximale
+
+- Ensuite, on concatene ces 4 vecteurs en un gros vecteur d'inputs de dimension `\(24 + 7 + 14 + 16 = 61\)` qu'on va donner en entrée à un perceptron multicouches:
+
+`\(\textbf{input} = (\boldsymbol{h}, \boldsymbol{p}, \boldsymbol{vmo}, \boldsymbol{vma})\)`
+
+---
+
+# Structure du réseau
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
