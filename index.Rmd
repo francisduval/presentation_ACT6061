@@ -481,7 +481,7 @@ Une solution est de donner en entrée à un réseau de neurones les données té
 
 $\boldsymbol{h} = (h_1, h_2, \dots, h_{24})$, où $h_i$ est la fraction de la conduite dans la $i^\text{e}$ heure de la journée
 
-$\boldsymbol{p} = (p_1, h_2, \dots, p_7)$, où $p_i$ est la fraction de la conduite dans la $i^\text{e}$ journée de la semaine
+$\boldsymbol{p} = (p_1, p_2, \dots, p_7)$, où $p_i$ est la fraction de la conduite dans la $i^\text{e}$ journée de la semaine
 
 $\boldsymbol{vmo} = (vmo_1, vmo_2, \dots, vmo_{14})$, où $vmo_i$ est la fraction de trajets dans le $i^\text{e}$ intervalle de vitesse moyenne
 
