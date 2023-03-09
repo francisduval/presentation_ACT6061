@@ -1,6 +1,6 @@
 ---
-title: "Tarification avec données télématiques"
-subtitle: "Nom de la conférence"
+title: "Introduction à l'apprentissage profond"
+subtitle: "Modèles actuariels en assurance non-vie"
 author: "Francis Duval"
 institute: "Université du Québec à Montréal"
 date: "`r Sys.Date()`"
