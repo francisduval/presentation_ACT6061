@@ -487,7 +487,7 @@ $\boldsymbol{vmo} = (vmo_1, vmo_2, \dots, vmo_{14})$, où $vmo_i$ est la fractio
 
 $\boldsymbol{vma} = (vma_1, vma_2, \dots, vma_{16})$, où $vma_i$ est la fraction de trajets dans le $i^\text{e}$ intervalle de vitesse maximale
 
-- Ensuite, on concatene ces 4 vecteurs en un gros vecteur d'inputs de dimension $24 + 7 + 14 + 16 = 61$ qu'on va donner en entrée à un perceptron multicouches:
+- Ensuite, on concatène ces 4 vecteurs en un gros vecteur d'inputs de dimension $24 + 7 + 14 + 16 = 61$ qu'on va donner en entrée à un perceptron multicouches:
 
 $\textbf{input} = (\boldsymbol{h}, \boldsymbol{p}, \boldsymbol{vmo}, \boldsymbol{vma})$
 
