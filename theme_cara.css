@@ -355,7 +355,7 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 }
 .remark-slide-content.header_background,
 .remark-slide-content:not(.normal):not(.inverse):not(.title):not(.middle):not(.bottom) {
-  padding-top: 6rem;
+  padding-top: 5rem;
 }
 
 @page { margin: 0; }

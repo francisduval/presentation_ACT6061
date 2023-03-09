@@ -493,5 +493,11 @@ $\textbf{input} = (\boldsymbol{h}, \boldsymbol{p}, \boldsymbol{vmo}, \boldsymbol
 
 ---
 
-# Structure du réseau
+background-image: url("images/graphe_reseau.png")
+background-position: -1cm 2cm
+background-size: 67em 31.5em
 
+# Application - tarification avec données télématiques
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+$~~~~~~~~~~~~~~~~~~$ .gras-bleu[Structure du réseau]
