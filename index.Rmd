@@ -55,6 +55,13 @@ knitr::include_graphics("images/ai_ml_dl.png")
 **Apprentissage profond**
 - Machine learning qui va encore plus loin et qui va extraire automatiquement l'information utile à partir des données brutes.
 
+Exemple: pour la détection de pourriels, un algorithme de machine learning pourrait utiliser des « règles » du genre « le courriel contient des signes de $ » ou bien « l'expéditeur est inconnu » pour déterminer si le courriel est indésirable. Un algorithme d'apprentissage profond utiliserait des données en format plus brute, telles que le texte du courriel.
+
+Exemples d'algorithmes d'intelligence artificielle qui **ne** sont **pas** du machine learning:
+- Systèmes experts
+- Algorithmes évolutionnistes
+- Etc.
+
 ---
 
 # Pourquoi l'apprentissage profond?
@@ -102,6 +109,12 @@ knitr::include_graphics("images/dl_faces.jpg")
 - Noter qu'il y a quand même un certain travail d'ingénierie de données à faire. Par exemple, il est peu probable qu'une date (stockée sous `R` en nombre de jours depuis 1970) soit pertinente pour la tarification.
 ]
 
+???
+
+- Ici, je vous présente 2 approches pour la tarification avec données télématiques: une avec un algorithme de machine learning et une autre avec du deep learning.
+
+- Il est important de savoir que même si on donne typiquement des données plus brutes à un algorithme de deep learning qu'à un algorithme de machine learning, il faut quand même porter une attention particulière à ce qu'on donne en entrée au modèle.
+
 ---
 
 # Pourquoi l'apprentissage profond?
@@ -123,6 +136,10 @@ knitr::include_graphics("images/deep_learning.png")
 <br>
 ## Deep learning
 ]
+
+???
+
+Une image qui illustre bien la différence entre machine learning et deep learning.
 
 ---
 
@@ -269,7 +286,7 @@ La fonction de prédiction peut être écrite sous forme matricielle: $\widehat{
   \end{align}
   - Entropie croisée binaire (pour $y \in \{0, 1\}$):
   \begin{align}
-    \ell(y, \widehat{y}) = \left[y \ln(\widehat{y}) + (1-y) \ln(1-\widehat{y})\right]
+    \ell(y, \widehat{y}) = -\left[y \ln(\widehat{y}) + (1-y) \ln(1-\widehat{y})\right]
   \end{align}
   - Moins la log-vraisemblance Poisson pour données de comptage:
   \begin{align}
